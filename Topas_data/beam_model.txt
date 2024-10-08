@@ -1,0 +1,129 @@
+
+i:Ts/ShowHistoryCountAtInterval = 1000
+i:So/FLASHBeam/NumberOfHistoriesInRun = 100
+sv:Ph/Default/Modules = 6 "g4em-standard_opt4" "g4h-phy_QGSP_BIC_HP" "g4decay" "g4ion-binarycascade" "g4h-elastic_HP" "g4stopping"
+Ge/QuitIfOverlapDetected = "True"
+i:Ts/NumberOfThreads = 20
+
+# s:Gr/ViewA/Type             = "OpenGL"
+# i:Gr/ViewA/WindowSizeX      = 1024
+# i:Gr/ViewA/WindowSizeY      = 768
+# b:Gr/ViewA/IncludeAxes      = "True"
+# ######## x right/out, y up, z left out
+# d:Gr/ViewA/Theta            = 135 deg
+# d:Gr/ViewA/Phi              = 45 deg
+# d:Gr/ViewA/PerspectiveAngle = 10 deg
+# s:Gr/ViewA/Projection       = "Perspective"
+# # u:Gr/ViewA/Zoom             = 0
+# d:Gr/ViewA/AxesSize = 100 cm # size of axes
+# Ts/UseQt = "True"
+# b:Ts/PauseBeforeQuit = "True"
+
+s:Ge/World/Material  = "Air"
+d:Ge/World/HLX       = 2 m
+d:Ge/World/HLY       = 2 m
+d:Ge/World/HLZ       = 2 m
+b:Ge/World/Invisible = "False"
+
+# s:So/FLASHBeam/BeamParticle = "e-"
+# s:So/FLASHBeam/Component                = "BeamPosition"
+# d:So/FLASHBeam/BeamEnergy               = 12 MeV
+# u:So/FLASHBeam/BeamEnergySpread         = 0.268174
+# s:So/FLASHBeam/Type           = "Emittance"
+# s:So/FLASHBeam/Distribution   = "BiGaussian"
+# d:So/FLASHBeam/SigmaX         = 4 cm
+# u:So/FLASHBeam/SigmaXprime    = 0.000349
+# u:So/FLASHBeam/CorrelationX   = 0.988191
+# d:So/FLASHBeam/SigmaY         = 4 cm
+# u:So/FLASHBeam/SigmaYPrime    = 0.001049
+# u:So/FLASHBeam/CorrelationY   = -0.993127
+
+s:So/FLASHBeam/Type                     = "Beam"
+s:So/FLASHBeam/Component                = "BeamPosition"
+s:So/FLASHBeam/BeamParticle             = "e-"
+d:So/FLASHBeam/BeamEnergy               = 12.51 MeV
+u:So/FLASHBeam/BeamEnergySpread         = 0.5
+s:So/FLASHBeam/BeamPositionDistribution = "Gaussian"
+s:So/FLASHBeam/BeamAngularDistribution  = "Gaussian"
+s:So/FLASHBeam/BeamPositionCutoffShape = "Ellipse"
+d:So/FLASHBeam/BeamPositionCutoffX = 15 cm
+d:So/FLASHBeam/BeamPositionCutoffY = 15 cm
+d:So/FLASHBeam/BeamPositionSpreadX = 0.5 mm
+d:So/FLASHBeam/BeamPositionSpreadY = 0.5 mm
+d:So/FLASHBeam/BeamAngularCutoffX = 90 deg
+d:So/FLASHBeam/BeamAngularCutoffY = 90 deg
+d:So/FLASHBeam/BeamAngularSpreadX = 0.045 rad
+d:So/FLASHBeam/BeamAngularSpreadY = 0.050 rad
+
+s:Ge/BeamPosition/Parent   = "World"
+s:Ge/BeamPosition/Type     = "Group"
+d:Ge/BeamPosition/TransX   = 0. m
+d:Ge/BeamPosition/TransY   = 0. m
+d:Ge/BeamPosition/TransZ   = 0. cm
+d:Ge/BeamPosition/RotX     = 0. deg
+d:Ge/BeamPosition/RotY     = 0. deg
+d:Ge/BeamPosition/RotZ     = 180. deg
+
+s:Ge/Film1/Type     = "TsBox"
+s:Ge/Film1/Parent   = "World"
+s:Ge/Film1/Material = "G4_WATER"
+d:Ge/Film1/HLX      = 8.460559 cm
+d:Ge/Film1/HLY      = 8.460559 cm
+d:Ge/Film1/HLZ      = 0.139 mm
+d:Ge/Film1/TransX   = 0. cm
+d:Ge/Film1/TransY   = 0. cm
+d:Ge/Film1/TransZ   = 64.095 cm # TransZ = (66.59+61.60)/2 - HLZ
+d:Ge/Film1/RotX     = 0. deg
+d:Ge/Film1/RotY     = 0. deg
+d:Ge/Film1/RotZ     = 0. deg
+s:Ge/Film1/Color    = "skyblue"
+i:Ge/Film1/XBins = 100
+i:Ge/Film1/YBins = 100
+
+s:Ge/Film2/Type     = "TsBox"
+s:Ge/Film2/Parent   = "World"
+s:Ge/Film2/Material = "G4_WATER"
+d:Ge/Film2/HLX      = 8.460559 cm
+d:Ge/Film2/HLY      = 8.460559 cm
+d:Ge/Film2/HLZ      = 0.139 mm
+d:Ge/Film2/TransX   = 0. cm
+d:Ge/Film2/TransY   = 0. cm
+d:Ge/Film2/TransZ   = 73.956 cm # TransZ = (66.59+61.60)/2 - HLZ + 10
+d:Ge/Film2/RotX     = 0. deg
+d:Ge/Film2/RotY     = 0. deg
+d:Ge/Film2/RotZ     = 0. deg
+s:Ge/Film2/Color    = "green"
+i:Ge/Film2/XBins = 100
+i:Ge/Film2/YBins = 100
+
+s:Ge/WaterTank/Type     = "TsBox"
+s:Ge/WaterTank/Parent   = "World"
+s:Ge/WaterTank/Material = "G4_WATER"
+d:Ge/WaterTank/HLX      = 10.0 cm
+d:Ge/WaterTank/HLY      = 10.0 cm
+d:Ge/WaterTank/HLZ      = 5.071535 cm
+d:Ge/WaterTank/TransX   = 0. cm
+d:Ge/WaterTank/TransY   = 0. cm
+d:Ge/WaterTank/TransZ   = 106 cm # Assume 100cm SSD: TransZ = 100 + HLZ = 106
+d:Ge/WaterTank/RotX     = 0. deg
+d:Ge/WaterTank/RotY     = 0. deg
+d:Ge/WaterTank/RotZ     = 0. deg
+s:Ge/WaterTank/Color    = "green"
+i:Ge/WaterTank/XBins = 1
+i:Ge/WaterTank/YBins = 1
+i:Ge/WaterTank/ZBins = 600
+
+s:Sc/DoseAtFilm1/Quantity = "DoseToMedium"
+s:Sc/DoseAtFilm1/Component = "Film1"
+s:Sc/DoseAtFilm1/IfOutputFileAlreadyExists = "Overwrite"
+b:Sc/DoseAtFilm1/OutputToConsole = "False"
+
+s:Sc/DoseAtFilm2/Quantity = "DoseToMedium"
+s:Sc/DoseAtFilm2/Component = "Film2"
+s:Sc/DoseAtFilm2/IfOutputFileAlreadyExists = "Overwrite"
+b:Sc/DoseAtFilm2/OutputToConsole = "False"
+
+s:Sc/DoseAtWaterTank/Quantity = "DoseToMedium"
+s:Sc/DoseAtWaterTank/Component = "WaterTank"
+s:Sc/DoseAtWaterTank/IfOutputFileAlreadyExists = "Overwrite"
+b:Sc/DoseAtWaterTank/OutputToConsole = "False"
